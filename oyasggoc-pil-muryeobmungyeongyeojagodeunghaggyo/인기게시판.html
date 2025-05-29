@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, 그리고 Bootstrap 기여자들">
+  <meta name="generator" content="Hugo 0.104.2">
+  <link rel="icon" href="사진/파비콘.png">
+  <title>오얏꽃 필 무렵</title>
+
+  <link rel="canonical" href="https://getbootstrap.kr/docs/5.2/examples/album/">
+
+
+
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+  <meta name="theme-color" content="#712cf9">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+      .centered { 
+        display: table; 
+        margin-left: auto; 
+        margin-right: auto; 
+        margin-top: 10px;
+      }
+
+      .buttoncen {
+        margin-top: 50px;
+      }
+    
+  </style>
+
+
+</head>
+
+<body>
+
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        
+          <button type="button" class="btn btn-dark">※공지※</button>
+          <button type="button" class="btn btn-dark">인기 게시판</button>
+          <button type="button" class="btn btn-dark">자유 게시판</button>
+          <button type="button" class="btn btn-dark">익명 게시판</button>
+          <button type="button" class="btn btn-dark">새내기🐤</button>
+          <button type="button" class="btn btn-dark">꿀Tip!</button>
+          <button type="button" class="btn btn-dark">입시&면접</button>
+          <button type="button" class="btn btn-dark">🔥열공🔥</button>
+          <button type="button" class="btn btn-dark">☆★훈녀생정★☆</button>
+          </div>
+           
+          
+           
+            
+              
+              
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <img src="사진/파비콘.png" width="28"
+            height="25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+          <circle cx="12" cy="13" r="4" /></svg>
+          <strong>오얏꽃 필 무렵</strong>
+        </a>
+       <div class="col-lg-6 col-sm-12 text-lg-end text-center">
+         <button class="btn" id="btn" type="submit"><img class="btn-img" src="https://www.ebssw.kr/images/egovframework/com/ebs/renewal/common/m_img_profile.png" width="25" height="25" onclick="location.href='로그인.html'"></button>
+
+            
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">인기 게시판</h1>
+          <p class="lead text-muted">실시간으로 인기있는 글을 확인해보세요.</p>
+          
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="card-img-top"  src="http://aroundusent.com/_data/artist_gallery_img/202211/02/82cb4e4c0f4ffed22f5a045c085dcb68.jpg" alt="Card image cap" style="max-width:100%; height:auto;" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="centered">
+                  <div class="item">하이라이트 컴백곡 대박이네</div>
+                </div>
+
+              <div class="card-body">
+                <p class="card-text">하이라이트 14년차 장수돌인데 1년 2컴백함 ㄹㅈㄷ임 11월 초에 컴백 앨범이름이 애프터 선셋인데 그 뜻이 “새벽이 오면 또 빛이 오는 것처럼, 저희의 활동이 팬분들께 당연한 시간이길 바라는 마음”이래 진짜 팬사랑이랑 그룹에 대한 자부심이 엄청난 듯 늘 응원하면서 컴백할 때마다 노래 찾아듣는데 매번 노래도 진짜 좋고 컨셉도 다 소화해냄 장수돌인데에는 이유가 있는 듯 다들 한번씩 들어봐</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="https://www.youtube.com/watch?v=roCIIc72ggg">
+                      <button type="button" class="btn btn-outline-secondary">View</button>
+                    </a>
+                  </div>
+                  <small class="text-muted">자유 게시판</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="card-img-top"  src="사진/윤수빈.jpg" style="max-width:100%; height:auto;" alt="Card image cap" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="centered">
+                  <div class="item">윤수빈? 그게 누군데</div>
+                </div>
+
+
+              <div class="card-body">
+                <p class="card-text">이름 윤수빈. 나이 만 17세. 학교 문경여자고등학교. 학반번호 2614. 음 수빈아 적을 게 없다 미안타 윤수빈 최고!!❤️ <br>⇓윤수빈 인스타 구경가기 </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="https://instagram.com/kyxxnxgn_?igshid=YmMyMTA2M2Y=">
+                      <button type="button" class="btn btn-outline-secondary">View</button>
+                    </a>
+                  </div>
+                  <small class="text-muted">☆★훈녀생정★☆</small>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+          
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="card-img-top"  src="http://www.newskr.kr/news/photo/202210/82764_70560_3228.png" style="max-width:100%; height:auto;" alt="Card image cap" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="centered">
+                  <div class="item">요즘 SPC 논란 있는 거 알지</div>
+                </div>
+
+              <div class="card-body">
+                <p class="card-text">논란 이후로 요즘 SPC 소비 안 하고 있음 근데 매점에 빵이 거의 다 SPC더라ㄷㄷ SPC관련해서 잘 모르는 사람도 많은 거 같아서 관련 기사 링크 달아놓을게 관심 있는 이화인들 한 번 읽어봐!
+<br>#노동3권파괴 #성차별적노동환경 #산재신청불가 #노조원승진차별</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="https://m.hani.co.kr/arti/society/labor/1062863.html?_fr=gg#cb">
+                      <button type="button" class="btn btn-outline-secondary">View</button>
+                    </a>
+                  </div>
+                  <small class="text-muted">자유 게시판</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="card-img-top"  src="https://image.bugsm.co.kr/artist/images/1000/801827/80182768.jpg" style="max-width:100%; height:auto;" alt="Card image cap" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="centered">
+                  <div class="item">노래 추천!! Fly away-권진아</div>
+                </div>
+
+              <div class="card-body">
+                <p class="card-text">목소리가 진짜 매력적이라 좋아하는 가수 중 한 명임 솔직히 노래 다 좋은데 요즘 최애곡 하나 추천할게! 가사랑 멜로디 다 너무 좋으니까 꼭 들어봐! ~(￣▽￣)~</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="https://youtu.be/UHnDGdH5EfU">
+                      <button type="button" class="btn btn-outline-secondary">View</button>
+                    </a>
+                  </div>
+                  <small class="text-muted">자유 게시판</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="card-img-top"  src="사진/설아.jpg" style="max-width:100%; height:auto;" alt="Card image cap" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="centered">
+                  <div class="item">우주소녀 설아에 빠지다</div>
+                </div>
+
+              <div class="card-body">
+                <p class="card-text">스타쉽엔터테인먼트 소속 13인조 걸그룹 우주소녀의 멤버이며, 리드보컬을 맡고 있다. 우주소녀의 리드보컬로 새벽에 듣기 좋은 꿀성대의 소유자. 어려 보이는 외모와 달리 팀의 맏언니이기도 하다. 얼핏 도도해보이는 외모지만 사실 애교가 많다고 한다.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="https://www.youtube.com/watch?v=bbWuqMX-GZ0">
+                      <button type="button" class="btn btn-outline-secondary">View</button>
+                    </a>
+                  </div>
+                  <small class="text-muted">자유 게시판</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="card-img-top"  src="사진/하치와레.jpg" style="max-width:100%; height:auto;" alt="Card image cap" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="centered">
+                  <div class="item">먼가 작고 귀여운 하치와레</div>
+                </div>
+
+              <div class="card-body">
+                <p class="card-text">치이카와의 단짝친구로 하늘색 무늬를 가진 고양이 캐릭터. 이름의 유래는 턱시도 고양이를 일본어로 한자 八모양의 얼굴무늬를 가졌다고 해서 八割れ에서 따왔다. 정확한 어휘 없이 의성어로만 말하는 두 친구와는 달리 정확한 문장을 구사하고 그만큼 대사가 가장 많다.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="https://chiikawa.notion.site/97eb95d017e742c08d24ff82ae96ffee">
+                      <button type="button" class="btn btn-outline-secondary">View</button>
+                    </a>
+                  </div>
+                  <small class="text-muted">익명 게시판</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="card-img-top"  src="https://cdn.wadiz.kr/ft/images/green001/2020/0218/20200218215822488_114.jpg/wadiz/format/jpg/quality/80/optimize" style="max-width:100%; height:auto;" alt="Card image cap" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="centered">
+                  <div class="item">해외여행 가고 싶다T-T</div>
+                </div>
+
+              <div class="card-body">
+                <p class="card-text">코로나+k-고딩이라 해외여행 못 간지 한참 됨..ㅠㅠ 그래서 내가 대리 만족으로 자주 보는 여행 유튜버 추천해줄게! '여락이들'이라고 유럽, 동남아 같은 나라 뿐만 아니라 인도, 이집트, 히말라야 등반까지 난이도 상인 나라도 여행해서 훨씬 재밌음 인도 여행이 진짜 재밌으니까 이 영상으로 여락이들 입덕 ㄱㄱ</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="https://www.youtube.com/channel/UCgDlijNPh7yHQNv0YdL11fQ">
+                      <button type="button" class="btn btn-outline-secondary">View</button>
+                    </a>
+                  </div>
+                  <small class="text-muted">꿀Tip!</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+         <div class="col">
+            <div class="card shadow-sm">
+              <img class="card-img-top"  src="사진/최찬희.jpg" style="max-width:100%; height:auto;" alt="Card image cap" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="centered">
+                  <div class="item">최찬희 병크 터짐 <br>일반인 여친 있다던데</br></div>
+                </div>
+
+              <div class="card-body">
+                <p class="card-text">님들 그거 앎? ㄷㅂㅇㅈ ㄴ 일반인 여친 있음 꽤 오래 만난 거 같던데;; 여친 인스타 알아냈음ㅋㅋ 링크 걸어둘게</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="https://instagram.com/meteor_426?igshid=YmMyMTA2M2Y=">
+                      <button type="button" class="btn btn-outline-secondary">View</button>
+                    </a>
+                  </div>
+                  <small class="text-muted">익명 게시판</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="card-img-top"  src="https://t1.daumcdn.net/cfile/tistory/13025F374ECBA4E001" style="max-width:100%; height:auto;" alt="Card image cap" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="centered">
+                  <div class="item">겨울이니까 재즈 추천</div>
+                </div>
+
+              <div class="card-body">
+                <p class="card-text">솔직히 재즈가 제일 잘 어울리는 때는 크리스마스다 ㅇㅈ?? 캐롤 들리는 길거리 걸을 때 내 에어팟에서는 이 노래 나올 것 같은 재질.. 워낙 유명하고 재즈의 교과서 같은 노래라 모두가 좋아할 것 같음 추천!<br>/Cheek To Cheek-Ella Fitzgerald,Louis Armstrong</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="https://youtu.be/lFiGn5lpahc">
+                      <button type="button" class="btn btn-outline-secondary">View</button>
+                    </a>
+                  </div>
+                  <small class="text-muted">익명 게시판</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+    
+  </main>
+
+  <footer class="text-muted py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">Back to top</a>
+      </p>
+      <p class="mb-1">Album example is &copy; Bootstrap, but Yeji worked hard to customize it!!!</p>
+      <p class="mb-0"><a href="http://school.gyo6.net/mungyeong?intro=N">문경여자고등학교 홈페이지</a>  /  <a
+          href="http://news.mungyeong.org/">웹진 이화진</a></p>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
