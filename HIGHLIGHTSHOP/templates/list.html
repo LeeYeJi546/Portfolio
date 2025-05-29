@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIGHLIGHTSHOP</title>
+</head>
+
+<body style="background-color: #FFFFFF;">
+    <div class="top">
+        <p class="tilt">HIGHLIGHTSHOP</p>
+        <p class="sub">202435048 이예지</p>
+    </div>
+
+    <div class="ht">
+        <input id="search" type="text" placeholder="">
+        <div id="search_btn">🔍︎</div>
+    </div>
+
+    <div class="content" id="items"></div>
+
+    <div class="sel">
+        <p class="sel_title">장바구니</p>
+        <ul class="list-group list-group-numbered">
+            {% for c in cart.items %}
+            <li class="list-group-item bg-light d-flex justify-content-between align-items-start">
+                <div class="me-auto">{{c.name}} / {{c.price}}원</div> 
+                <a class="cart_del" href="/del/{{c.code}}">삭제</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <hr>
+        <button onclick="checkout()" type="button" class="sel_btn">{{cart.total()}}원 결제하기</button>
+    </div>
+</body>
+</html>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .top {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tilt {
+        margin-top: 2vh;
+        margin-left: 3vh;
+        margin-right: 2vh;
+        margin-bottom: 0;
+        padding: 0;
+        font-family: "KartriderExtraBold";
+        font-size: 5vh;
+        color: rgb(0, 0, 0);
+    }
+
+    .content {
+        margin: 0;
+        padding: 4vh;
+        width: calc(100vw - 8vh);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .item {
+        margin-top: 0;
+        margin-left: 1vh;
+        margin-right: 1vh;
+        margin-bottom: 2vh;
+        padding: 4vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;  
+    }
+
+    .item_thumb {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 2vh;
+        padding: 0;
+        width: 30vh;
+        height: 30vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .item_code {
+        margin: 0;
+        padding: 0;
+        font-family: "Noto Sans Thin";
+        font-size: 1.5vh;
+        color: #2e2e2e;
+    }
+
+    .item_name {
+        margin: 0;
+        padding: 0;
+        font-family: "GmarketSansMedium";
+        font-size: 2vh;
+        text-align: center;
+        color: #070707;
+        border-bottom: 1px solid #ccc; /* 구분선 스타일 */
+        padding-bottom: 5px; /* 구분선과 텍스트 간격 조정 */
+
+    }
+
+    .item_price {
+        margin-top: 10;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 1vh;
+        padding: 0;
+        font-family: "GmarketSansMedium";
+        font-size: 1.8vh;
+        color: #202020;
+    }
+
+
+    .item_add {
+        margin: 0;
+        padding: 0;
+        width: 5vh;
+        height: 3vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        font-family: "Pretendard-Regular";
+        font-size: 1.5vh;
+        background-color: rgb(135, 135, 135);
+        color: rgb(255, 255, 255);
+    }
+
+   
+
+    .ht {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end; /* 자식 요소들을 오른쪽으로 정렬 */
+    }
+
+    .sel {
+        margin: 0;
+        padding-top: 10vh;
+        padding-left: 15vw;
+        padding-right: 15vw;
+        padding-bottom: 10vh;
+        width: 70vw;
+    }
+
+    .sel_title {
+        margin: 0;
+        padding: 0;
+        font-family: "SBAggroB";
+        font-size: 4vh;
+        color: #070707;
+    }
+
+    .me-auto {
+        margin: 0;
+        padding: 0;
+        font-family: "Pretendard-Regular";
+        font-size: 2.7vh;
+        color: #070707;
+    }
+
+    .sel_btn {
+        margin: 0;
+        padding: 0;
+        width: 22vh;
+        height: 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(135, 135, 135);
+        border: 1px solid rgba(135,135,135);
+        font-family: "GmarketSansMedium";
+        font-size: 2vh;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .sub {
+        margin: 5;
+        padding: 0;
+        font-family: "GmarketSansMedium";
+        font-size: 1.8vh;
+        color: rgb(0, 0, 0);
+    }
+
+    #search {
+        margin-top: 0;
+        margin-left: 2vh;
+        margin-right: 0;
+        margin-bottom: 0;
+        padding: 0.5vh;
+        width: 25vh;
+        height: 3vh;
+        display: flex;
+        font-family: "GmarketSansMedium";
+        color: rgb(0, 0, 0);
+        font-size: 1.8vh;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgb(134, 134, 134);
+        outline: none;
+        border-top-left-radius: 1vh;
+        border-bottom-left-radius: 1vh;
+    }
+    
+    #search_btn {
+        margin: 0;
+        margin-right: 4vh;
+        padding: 0;
+        width: 4vh;
+        height: 4vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-family: "GmarketSansMedium";
+        font-size: 1.8vh;
+        color: rgb(255, 255, 255);
+        background-color: rgba(134, 134, 134);
+        border: 1px solid rgba(134, 134, 134);
+        border-top-right-radius: 1vh;
+        border-bottom-right-radius: 1vh;
+    }
+
+    .cart_del {
+        margin: 0;
+        padding: 0;
+        width: 8vh;
+        height: 4vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(135, 135, 135);
+        font-family: "Pretendard-Regular";
+        font-size: 2vh;
+        color: aliceblue;
+    }
+
+    @font-face {font-family: 'Noto Sans Thin';font-style: normal;font-weight: 100;src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+    @font-face {font-family: 'Noto Sans Black';font-style: normal;font-weight: 100;src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+    @font-face {font-family: 'Noto Sans Medium';font-style: normal;font-weight: 100;src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+
+    @font-face {
+        font-family: 'MYYeongnamnu';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYYeongnamnu.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'OwnglyphMoogungChae';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/OwnglyphMoogungChae.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'SBAggroB';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'GmarketSansMedium';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'KartriderExtraBold';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KartriderExtraBold.woff2') format('woff2');
+        font-weight: 800;
+        font-style: normal;
+    }
+    
+</style>
+
+<script>
+    window.addEventListener("load", async () => {
+        let menus = await getJSON("getMenu");
+
+        document.getElementById("search_btn").addEventListener("click", () => {
+            return window.open("./search/" + document.getElementById("search").value, "_self");
+        });
+        
+        console.log(menus);
+        let menuDiv = "";
+        let unter = 5;
+
+        for (let o in menus) {
+            console.log(menus[o]);
+            if (unter % 5 == 0) {
+                if (unter != 5) menuDiv += '</div>';
+                menuDiv += '<div class="ht">';
+            }
+
+            menuDiv += '<div class="item" id="' + menus[o].code + '">' +
+                '<div class="item_thumb" style="background-image: url(./img?src=' + menus[o].code +'.jpg);"></div>' +
+                '<p class="item_name">' + menus[o].name + '</p>' +
+                '<p class="item_price">' + menus[o].price + '</p>' +
+                '<a class="item_add" href="/add/' + menus[o].code + '">선택</a>' +
+            '</div>';
+            unter++;
+        }
+
+        menuDiv += '</div>';
+        document.getElementById("items").innerHTML = menuDiv;
+    });
+
+    function checkout() {
+        if ('{{cart.total()}}' == 0) {
+            alert('선택된 상품이 없습니다.');
+            return;
+        }
+        else {
+            sel = confirm('선택한 상품을 결제하시겠습니까?');
+            if (sel == true) {
+                location.href = '/checkout';
+            } else {
+                return;
+            }
+        }
+    }
+
+    async function getJSON (path) {
+        return new Promise(async (resolve, reject) => {
+            await fetch("./api/" + path, {
+                method: "GET",
+                mode: "same-origin",
+                cache: "no-cache",
+                credentials: "same-origin"
+            })
+
+            .then((response) => {
+                if (response.status != 200) return null;
+                return response.json();
+            })
+            
+            .then((data) => {
+                return resolve(data);
+            })
+            
+            .catch((error) => {
+                console.log(error);
+                return resolve(null);
+            });
+        });
+    }
+</script>
